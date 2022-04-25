@@ -1,7 +1,7 @@
 <template>
     <view>
         <view class="copyright">
-            <view class="text">Powered by ShopXO {{version}}</view>
+            <view class="text">Powered by Gerric {{version}}</view>
         </view>
     </view>
 </template>
