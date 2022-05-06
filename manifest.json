@@ -1,6 +1,6 @@
 {
-    "name" : "zhonghe",
-    "appid" : "__UNI__C191E0C",
+    "name" : "众合",
+    "appid" : "__UNI__7B99C40",
     "description" : "贵州众合宏远科技有限公司",
     "versionName" : "2.2.8",
     "versionCode" : 2020803,
@@ -8,6 +8,7 @@
     "app-plus" : {
         "usingComponents" : true,
         "nvueCompiler" : "uni-app",
+        "ignoreVersion" : true,
         "compilerVersion" : 3,
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
@@ -17,18 +18,21 @@
         },
         "modules" : {
             "Bluetooth" : {},
-            "Contacts" : {},
-            "VideoPlayer" : {}
+            "VideoPlayer" : {},
+            "Payment" : {},
+            "SQLite" : {},
+            "Contacts" : {}
         },
         "distribute" : {
             "android" : {
                 "permissions" : [
-                    "<uses-feature android:name=\"android.hardware.camera\"/>",
                     "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_MOCK_LOCATION\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.AUTHENTICATE_ACCOUNTS\"/>",
                     "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
                     "<uses-permission android:name=\"android.permission.CAMERA\"/>",
                     "<uses-permission android:name=\"android.permission.CAPTURE_SECURE_VIDEO_OUTPUT\"/>",
@@ -42,27 +46,67 @@
                     "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_SMS\"/>",
                     "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
                     "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
                     "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SMS\"/>"
                 ]
             },
             "ios" : {
                 "idfa" : false
             },
-            "sdkConfigs" : {},
+            "sdkConfigs" : {
+                "ad" : {},
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "android" ]
+                    }
+                }
+            },
             "icons" : {
                 "android" : {
-                    "hdpi" : "C:/Users/qgsafe/Desktop/logo.png",
-                    "xhdpi" : "C:/Users/qgsafe/Desktop/logo.png",
-                    "xxhdpi" : "C:/Users/qgsafe/Desktop/logo.png",
-                    "xxxhdpi" : "C:/Users/qgsafe/Desktop/logo.png"
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
                 }
             },
             "splashscreen" : {
-                "useOriginalMsgbox" : true
+                "useOriginalMsgbox" : true,
+                "androidStyle" : "default",
+                "android" : {
+                    "hdpi" : "static/screen/screen.png",
+                    "xhdpi" : "static/screen/screen.png",
+                    "xxhdpi" : "static/screen/screen.png"
+                }
             }
         }
     },
@@ -82,11 +126,6 @@
         },
         "plugins" : {}
     },
-    // // 直播（需要开通权限 https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/live-player-plugin.html）
-    // "live-player-plugin" : {
-    //     "version" : "1.3.0",
-    //     "provider" : "wx2b03c6e691cd7370"
-    // }
     "mp-alipay" : {
         "usingComponents" : true,
         "appid" : "2021001173639600"
@@ -129,11 +168,11 @@
                 "/api" : {
                     "target" : "http://192.168.50.195/www.app.com/", //你要跨域的地址
                     "port" : 1024,
-                    "changeOrigin" : true, // 是否改变
+                    "changeOrigin" : true,
                     "disableHostCheck" : true,
-                    "secure" : false, //https配置
+                    "secure" : false,
                     "pathRewrite" : {
-                        "^/api" : "" // 将api替换为'',因为接口本身不带api
+                        "^/api" : ""
                     }
                 }
             }
