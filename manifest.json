@@ -1,7 +1,7 @@
 {
-    "name" : "众合",
+    "name" : "众和",
     "appid" : "__UNI__7B99C40",
-    "description" : "贵州众合宏远科技有限公司",
+    "description" : "贵州众和宏远科技有限公司",
     "versionName" : "2.2.8",
     "versionCode" : 2020803,
     "transformPx" : false,
@@ -54,7 +54,8 @@
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SMS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ]
             },
             "ios" : {
                 "idfa" : false
@@ -166,7 +167,7 @@
             "https" : false,
             "proxy" : {
                 "/api" : {
-                    "target" : "http://192.168.50.195/www.app.com/", //你要跨域的地址
+                    "target" : "http://name1t3gkp4p.ldcvh.china-yun.net/", //你要跨域的地址
                     "port" : 1024,
                     "changeOrigin" : true,
                     "disableHostCheck" : true,
@@ -181,7 +182,7 @@
             "mode" : "history",
             "base" : "./"
         },
-        "title" : "ShopXO",
+        "title" : "ZhongHe",
         "template" : "template.h5.html"
     },
     "vueVersion" : "2"

@@ -41,9 +41,9 @@
                 <!-- #endif -->
                 <!-- #ifdef H5 || APP -->
                 <!-- 右侧icon -->
-                <view class="top-nav-right-icon pf" :style="'top:'+top_nav_icon_top_value+'px;left:'+top_nav_right_icon_left_value+'px;'">
+              <!--  <view class="top-nav-right-icon pf" :style="'top:'+top_nav_icon_top_value+'px;left:'+top_nav_right_icon_left_value+'px;'">
                     <uni-icons type="redo" size="20" color="#333" class="icon round cp" @tap="popup_share_event"></uni-icons>
-                </view>
+                </view> -->
                 <!-- #endif -->
             </block>
 

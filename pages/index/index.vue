@@ -44,10 +44,10 @@
                 </view>
 
                 <!-- 商城公告 -->
-                <view class="notice-content spacing-mb" v-if="load_status == 1 && (common_shop_notice || null) != null">{{common_shop_notice}}</view>
+                <!-- <view class="notice-content spacing-mb" v-if="load_status == 1 && (common_shop_notice || null) != null">{{common_shop_notice}}</view> -->
 
                 <!-- 推荐文章 -->
-                <view v-if="article_list.length > 0" class="article-list padding-main border-radius-main oh bg-white spacing-mb">
+<!--                <view v-if="article_list.length > 0" class="article-list padding-main border-radius-main oh bg-white spacing-mb">
                     <image :src="static_url+'new-icon.png'" mode="aspectFit" class="new-icon va-m fl cp" data-value="/pages/article-category/article-category" @tap="url_event"></image>
                     <view class="right-content fr va-m">
                         <swiper :vertical="true" :autoplay="true" :circular="true" display-multiple-items="1" interval="3000">
@@ -59,7 +59,7 @@
                             </block>
                         </swiper>
                     </view>
-                </view>
+                </view> -->
                 
                 <!-- 首页中间广告 - 插件 -->
                 <view v-if="(plugins_homemiddleadv_data || null) != null && plugins_homemiddleadv_data.length > 0" class="plugins-homemiddleadv oh">

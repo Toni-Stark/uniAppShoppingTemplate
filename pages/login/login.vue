@@ -78,7 +78,9 @@
                 <!-- 登录 -->
                 <view v-if="current_opt_form == 'login'" class="form-content">
                     <form @submit="formLogin">
-                        <!-- 账号密码 -->
+                        <!-- 
+						 
+						 -->
                         <block v-if="current_opt_type == 'login_username'">
                             <input type="text" placeholder="输入用户名/手机/邮箱" maxlength="60" name="accounts" class="form-item margin-vertical-main wh-auto">
                             <input type="text" placeholder="输入登录密码" minlength="6" maxlength="18" name="pwd" password="true" class="form-item margin-vertical-main wh-auto">
@@ -88,13 +90,13 @@
                             </view>
                         </block>
                         <!-- 手机 -->
-                        <block v-if="current_opt_type == 'login_sms'">
+                      <!--  <block v-if="current_opt_type == 'login_sms'">
                             <input type="number" placeholder="输入手机号码" maxlength="11" name="accounts" @input="form_input_mobile_event" class="form-item margin-vertical-main wh-auto">
                             <view class="code pr margin-vertical-main">
                                 <input type="number" placeholder="验证码" name="verify" maxlength="4">
                                 <button :class="'verify-submit pa round br text-size-sm cr-base ' + (verify_disabled ? 'sub-disabled' : '')" type="default" hover-class="none" size="mini" :loading="verify_loading" :disabled="verify_disabled" @tap="verify_send_event">{{verify_submit_text}}</button>
                             </view>
-                        </block>
+                        </block> -->
                         <!-- 邮箱 -->
                         <block v-if="current_opt_type == 'login_email'">
                             <input type="text" placeholder="输入电子邮箱" maxlength="60" name="accounts" @input="form_input_email_event" class="form-item margin-vertical-main wh-auto">
@@ -142,11 +144,11 @@
                                 <text class="cr-main-pair round padding-top-xs padding-bottom-xs padding-horizontal-main" data-value="reg" @tap="opt_form_event">还没账号？立即注册</text>
                             </view>
                             <!-- 登录方式选择 -->
-                            <view v-if="(home_user_login_type || null) != null && home_user_login_type.length > 0" class="opt-type-list margin-bottom-xl tc">
-                                <text v-if="home_user_login_type.indexOf('username') != -1" class="cr-blue" data-value="login_username" @tap="opt_type_event">账号密码</text>
-                                <text v-if="home_user_login_type.indexOf('sms') != -1" class="cr-blue" data-value="login_sms" @tap="opt_type_event">短信验证码</text>
-                                <text v-if="home_user_login_type.indexOf('email') != -1" class="cr-blue" data-value="login_email" @tap="opt_type_event">邮箱验证码</text>
-                            </view>
+                            <!-- <view v-if="(home_user_login_type || null) != null && home_user_login_type.length > 0" class="opt-type-list margin-bottom-xl tc"> -->
+                                <!-- <text v-if="home_user_login_type.indexOf('username') != -1" class="cr-blue" data-value="login_username" @tap="opt_type_event">账号密码</text> -->
+                                <!-- <text v-if="home_user_login_type.indexOf('sms') != -1" class="cr-blue" data-value="login_sms" @tap="opt_type_event">短信验证码</text> -->
+                                <!-- <text v-if="home_user_login_type.indexOf('email') != -1" class="cr-blue" data-value="login_email" @tap="opt_type_event">邮箱验证码</text> -->
+                            <!-- </view> -->
                         </view>
                     </form>
                 </view>
@@ -154,7 +156,6 @@
                 <!-- 注册 -->
                 <view v-else-if="current_opt_form == 'reg'" class="form-content">
                     <form @submit="formReg">
-                        <!-- 账号密码 -->
                         <block v-if="current_opt_type == 'reg_username'">
                             <input type="text" placeholder="输入用户名" maxlength="60" name="accounts" class="form-item margin-vertical-main wh-auto">
                             <input type="text" placeholder="输入登录密码" minlength="6" maxlength="18" name="pwd" password="true" class="form-item margin-vertical-main wh-auto">
@@ -164,23 +165,23 @@
                             </view>
                         </block>
                         <!-- 手机 -->
-                        <block v-if="current_opt_type == 'reg_sms'">
+              <!--          <block v-if="current_opt_type == 'reg_sms'">
                             <input type="number" placeholder="输入手机号码" maxlength="11" name="accounts" @input="form_input_mobile_event" class="form-item margin-vertical-main wh-auto">
                             <view class="code pr margin-vertical-main">
                                 <input type="number" placeholder="验证码" name="verify" maxlength="4">
                                 <button :class="'verify-submit pa round br text-size-sm cr-base ' + (verify_disabled ? 'sub-disabled' : '')" type="default" hover-class="none" size="mini" :loading="verify_loading" :disabled="verify_disabled" @tap="verify_send_event">{{verify_submit_text}}</button>
                             </view>
                             <input type="text" placeholder="输入登录密码" minlength="6" maxlength="18" name="pwd" password="true" class="form-item margin-vertical-main wh-auto">
-                        </block>
+                        </block> -->
                         <!-- 邮箱 -->
-                        <block v-if="current_opt_type == 'reg_email'">
+                  <!--      <block v-if="current_opt_type == 'reg_email'">
                             <input type="text" placeholder="输入电子邮箱" maxlength="60" name="accounts" @input="form_input_email_event" class="form-item margin-vertical-main wh-auto">
                             <view class="code pr margin-vertical-main">
                                 <input type="number" placeholder="验证码" name="verify" maxlength="4">
                                 <button :class="'verify-submit pa round br text-size-sm cr-base ' + (verify_disabled ? 'sub-disabled' : '')" type="default" hover-class="none" size="mini" :loading="verify_loading" :disabled="verify_disabled" @tap="verify_send_event">{{verify_submit_text}}</button>
                             </view>
                             <input type="text" placeholder="输入登录密码" minlength="6" maxlength="18" name="pwd" password="true" class="form-item margin-vertical-main wh-auto">
-                        </block>
+                        </block> -->
                         <!-- 协议 -->
                         <view class="margin-top-xxxl cr-gray">
                             <view class="dis-inline-block va-m" @tap="agreement_change">
@@ -208,11 +209,6 @@
                                 <text class="cr-main-pair round padding-top-xs padding-bottom-xs padding-horizontal-main" data-value="login" @tap="opt_form_event">已有账号？立即登录</text>
                             </view>
                             <!-- 注册方式选择 -->
-                            <view v-if="(home_user_reg_type || null) != null && home_user_reg_type.length > 0" class="opt-type-list margin-bottom-xl tc">
-                                <text v-if="home_user_reg_type.indexOf('username') != -1" class="cr-blue" data-value="reg_username" @tap="opt_type_event">账号密码</text>
-                                <text v-if="home_user_reg_type.indexOf('sms') != -1" class="cr-blue" data-value="reg_sms" @tap="opt_type_event">短信验证码</text>
-                                <text v-if="home_user_reg_type.indexOf('email') != -1" class="cr-blue" data-value="reg_email" @tap="opt_type_event">邮箱验证码</text>
-                            </view>
                         </view>
                     </form>
                 </view>
@@ -1207,11 +1203,12 @@
                 }
 
                 // 开启注册则取第一个
-                if(value == 'reg' && this.home_user_reg_type.length > 0) {
-                    data['current_opt_type'] = 'reg_'+this.home_user_reg_type[0];
+                if(value == 'reg' && this.home_user_reg_type.length > 1) {
+					console.log(798765);
+                    data['current_opt_type'] = "reg_username";
                     // 是否开启图片验证码
                     if(this.home_user_register_img_verify_state == 1 || this.common_img_verify_state == 1) {
-                        this.image_verify_event('user_reg');
+                        this.image_verify_event('reg_username');
                     }
                 }
                 this.setData(data);

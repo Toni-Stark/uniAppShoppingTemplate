@@ -90,19 +90,19 @@
                         </view>
                 
                         <!-- 联系客服 -->
-                        <view v-if="(common_app_customer_service_tel || null) != null" class="nav-item padding-main fl tc cp" @tap="call_event">
+                       <!-- <view v-if="(common_app_customer_service_tel || null) != null" class="nav-item padding-main fl tc cp" @tap="call_event">
                             <image :src="common_static_url+'customer-service-icon.png'" class="item-icon" mode="widthFix"></image>
                             <view class="item-name single-text cr-base">联系客服</view>
-                        </view>
+                        </view> -->
                     </view>
                 </view>
             </view>
         </view>
 
         <!-- 用户中心公告 -->
-        <view v-if="(common_user_center_notice || null) != null" class="padding-horizontal-main padding-bottom-main">
+  <!--      <view v-if="(common_user_center_notice || null) != null" class="padding-horizontal-main padding-bottom-main">
             <view class="notice-content">{{common_user_center_notice}}</view>
-        </view>
+        </view> -->
 
         <!-- 在线客服 -->
         <component-online-service :propIsNav="true" :propIsBar="true"></component-online-service>

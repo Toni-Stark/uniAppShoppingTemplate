@@ -47,16 +47,16 @@
                     "/pages/user/user"
                 ],
                 // 请求地址
-                request_url: 'http://192.168.50.195/www.app.com/',
+                request_url: 'http://name1t3gkp4p.ldcvh.china-yun.net/',
                 // request_url: 'http://d1.shopxo.vip/',
                 // 静态资源地址（如系统根目录不在public目录下面请在静态地址后面加public目录、如：https://d1.shopxo.vip/public/）
                 // static_url: 'https://d1.shopxo.vip/',
-                static_url: 'http://192.168.50.195/www.app.com/',
+                static_url: 'http://name1t3gkp4p.ldcvh.china-yun.net/public/',
                 // 系统类型（默认default、如额外独立小程序、可与程序分身插件实现不同主体小程序及支付独立）
                 system_type: 'default',
                 // 基础信息
-                application_title: "ShopXO",
-                application_describe: "ShopXO开源商城、MIT协议、可商用、可二次开发、满足99%电商运营需求",
+                application_title: "ZhongHe",
+                application_describe: "众和宏远商城",
                 // 版本号
                 version: "v2.2.7",
                 // 货币价格符号
